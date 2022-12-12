@@ -1,51 +1,52 @@
-function calculateAge (birthYear) {
-    return 2022 - birthYear;
+/*
+//Variables declaration
+    var firstRestaurant = 48;
+    var secondRestaurant = 124;
+    var thirdRestaurant = 268;
+//write the function
+function tipCalculator(bill){
+    if (bill<50 || bill==50){
+        return bill*0.2;
+    }else if (bill>50 || bill<200) {
+        return bill*0.15;
+    }else if (bill==200 || bill>200){
+        return bill*0.1;
+    }
 }
 
-var John_age = calculateAge(1992);
-var Mike_age = calculateAge(1981);
-var Marry_age = calculateAge(2000);
+//console.log(tipCalculator(200));
 
-console.log(John_age,Mike_age,Marry_age);
+var alltips = [];
+alltips.push(tipCalculator(firstRestaurant));
+alltips.push(tipCalculator(secondRestaurant));
+alltips.push(tipCalculator(thirdRestaurant));
+console.log("Amout of three tips is : " + alltips);
+console.log('=========================================================================================')
+var finalPaidAmount = [];
+finalPaidAmount.push(tipCalculator(firstRestaurant)+firstRestaurant);
+finalPaidAmount.push(tipCalculator(secondRestaurant)+secondRestaurant);
+finalPaidAmount.push(tipCalculator(thirdRestaurant)+thirdRestaurant);
+console.log("FinalPayedAmount is : " + finalPaidAmount);
+*/
 
-function untilRetireAge(year,firstName){
-var age = calculateAge(year);
-var retirement = 65 - age;
-    if(retirement>0) {
-    console.log(firstName + " retire in " + retirement + " years! " );
-    }else{
-        console.log(firstName+ " is already retired!");
+function tipCalculator(bill) {
+    var percentage;
+    if (bill<50) {
+        percentage = .2;
+    }else if (bill>=50 && bill<200) {
+        percentage = .15;
+    }else { 
+        percentage = .1;
     }
-
+    return percentage * bill;
 }
-
-untilRetireAge(1992,'John');
-untilRetireAge(1982,'Mike');
-untilRetireAge(1952,'Marry');
-
-//Function expression
-
-    var whatYouDo = function (job,firstName) {
-        switch(job){
-            case 'teacher':
-                return firstName + " is teach the kids how to code.";
-                break;
-            case 'driver':
-                return firstName + " is a drive taxi in the downtown.";
-                break;
-            case 'designer':
-                return firstName + " is drawing a design";
-                break;
-            default : 
-                return firstName + " is retired";
-        }
-    }
-
-console.log(whatYouDo('teacher','John'));
-console.log(whatYouDo('driver','Mike'));
-console.log(whatYouDo('retire','Marry'));
-
-
-
-
-
+var bill = [48,148,268];
+var tips = [tipCalculator(bill[0]),
+            tipCalculator(bill[1]),
+            tipCalculator(bill[2])];
+console.log("Amout of three tips is : " +tips);
+console.log('=========================================================================================')
+var finalPaidAmount = [bill[0]+tips[0],
+                        bill[0]+tips[0],
+                        bill[0]+tips[0]];
+console.log("FinalPayedAmount is : "+finalPaidAmount);
